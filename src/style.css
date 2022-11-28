@@ -1,0 +1,42 @@
+.separar-top{
+  padding-top: 20px;
+ }
+
+ .separar-bottom{
+  padding-bottom: 15px;
+ }
+
+.centro{
+  padding-top: 3%;
+}
+
+.title{
+  text-align: center;
+}
+
+.button-array{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.alert{
+  color: red;
+  transition: 5ms;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
