@@ -6,7 +6,7 @@
     <input type="text" class="form-control" v-model="nombre" id="formGroupExampleInput2" placeholder="Nombre" required>
     <span class="alert" v-if="re11">{{ respuesta }}</span>
     <label for="formGroupExampleInput2" class="form-label"></label>
-    <textarea class="form-control" v-model="direccion" placeholder="Direccion" required></textarea>
+    <textarea class="form-control" v-model="direccion"  placeholder="Direccion" required></textarea>
     <span class="alert" v-if="re22">{{ respuesta }}</span>
 
     <br>

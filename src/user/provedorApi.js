@@ -1,23 +1,25 @@
-import { reactive,ref } from "vue"
+import { reactive } from "vue"
 import axios from "axios";
 export default function getAll() {
-  
+
  const state = reactive({
   provedores: [],
-  producto:[]
+  producto:[],
+  name:"",
+  address:""
   })
 
+    //GET
  axios.get('http://localhost:8080/api/proveedor/all')
   .then((res) => res.data)
   .then((data) => {
-    data.forEach((element, index) => {
+    data.forEach((element) => {
       const provedor = {
         ...element
       }
       state.provedores.push(provedor)
     });
   })
-
 
     return {state,getAll}
 }
