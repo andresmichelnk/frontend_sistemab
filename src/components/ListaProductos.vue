@@ -17,9 +17,9 @@ export default {
         <p>
         <h4>{{ item.nombre }}</h4>
         <span>Codigo: {{ item.codigo }}</span> <br>
+        Descripcion : {{ item.descripcion }} <br>
         Precio de Venta: {{ item.precioVenta }} <br>
-        Cantida de unidades : {{ item.cantidad }} <br>
-        Unidad de Medida : {{ item.unidadMedidad }}
+        Unidad de Medida : {{ item.unidadMedida }}
         <button class="btn btn-primary float-end button-array">Eliminar</button>
         <button class="btn btn-primary float-end button-array">Editar</button>
         </p>

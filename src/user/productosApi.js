@@ -6,13 +6,12 @@ export default function getAll() {
   producto:[]
   })
 
-  axios.get('http://localhost:3000/productos')
+  axios.get('http://localhost:8080/api/producto/all')
   .then((res) => res.data)
   .then((data) => {
     data.forEach((element, index) => {
       const productos = {
-        ...element,
-        index: index + 1
+        ...element
       }
       state.producto.push(productos)
     });

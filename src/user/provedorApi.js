@@ -7,17 +7,17 @@ export default function getAll() {
   producto:[]
   })
 
- axios.get('http://localhost:3000/provedor')
+ axios.get('http://localhost:8080/api/proveedor/all')
   .then((res) => res.data)
   .then((data) => {
     data.forEach((element, index) => {
       const provedor = {
-        ...element,
-        index: index + 1
+        ...element
       }
       state.provedores.push(provedor)
     });
   })
+
 
     return {state,getAll}
 }

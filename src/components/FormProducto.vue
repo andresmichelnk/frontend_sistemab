@@ -1,20 +1,22 @@
 <template>
   <div class="container-fluid">
-    <label for="formGroupExampleInput" class="form-label separar-top separar-bottom">
+
+    <label for="formGroupExampleInput1" class="form-label separar-top separar-bottom">
       <h3>Nuevo Producto</h3>
     </label>
-    <input type="text" class="form-control" id="formGroupExampleInput1" v-model="nombreProducto"
-      placeholder="Nombre del producto"><span class="alert" v-if="res1">{{ respuesta }}</span>
-    <label for="formGroupExampleInput2" class="form-label"></label>
+
     <input type="text" class="form-control" id="formGroupExampleInput2" v-model="codigo"
-      placeholder="Codigo del producto"><span class="alert" v-if="res2">{{ respuesta }}</span>
+           placeholder="Codigo del producto"><span class="alert" v-if="res2">{{ respuesta }}</span>
+
     <label for="formGroupExampleInput2" class="form-label"></label>
+    <input type="text" class="form-control" id="formGroupExampleInput1" v-model="nombreProducto"
+      placeholder="Descripcion del producto"><span class="alert" v-if="res1">{{ respuesta }}</span>
+
+    <label for="formGroupExampleInput3" class="form-label"></label>
     <input type="text" class="form-control" id="formGroupExampleInput3" v-model="precio"
       placeholder="Precio de Venta"><span class="alert" v-if="res3">{{ respuesta }}</span>
-    <label for="formGroupExampleInput2" class="form-label"></label>
-    <input type="text" class="form-control" id="formGroupExampleInput4" v-model="cantidad"
-      placeholder="Cantidad de producto"><span class="alert" v-if="res4">{{ respuesta }}</span>
-    <label for="formGroupExampleInput2" class="form-label"></label>
+
+    <label for="formGroupExampleInput5" class="form-label"></label>
     <input type="text" class="form-control" id="formGroupExampleInput5" v-model="medida"
       placeholder="Unidad de medida del producto"><span class="alert" v-if="res5">{{ respuesta }}</span>
 
