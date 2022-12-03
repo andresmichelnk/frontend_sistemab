@@ -3,15 +3,14 @@
     <label for="formGroupExampleInput2" class="form-label separar-top separar-bottom">
       <h3>Nuevo Provedor</h3>
     </label>
-    <input type="text" class="form-control" v-model="nombre" id="formGroupExampleInput2" placeholder="Nombre">
-    <span class="alert" v-if="re1">{{ respuesta }}</span>
+    <input type="text" class="form-control" v-model="nombre" id="formGroupExampleInput2" placeholder="Nombre" required>
+    <span class="alert" v-if="re11">{{ respuesta }}</span>
     <label for="formGroupExampleInput2" class="form-label"></label>
-    <input type="text-Area" class="form-control" v-model="direccion" id="formGroupExampleInput2"
-      placeholder="Direccion">
-    <span class="alert" v-if="re2">{{ respuesta }}</span>
+    <textarea class="form-control" v-model="direccion" placeholder="Direccion" required></textarea>
+    <span class="alert" v-if="re22">{{ respuesta }}</span>
 
     <br>
-    <button @click="validar" class="btn btn-primary">Agregar Producto</button>
+    <button @click="validar" class="btn btn-primary">Agregar Provedor</button>
     <br><br><br>
 
   </div>
@@ -25,19 +24,19 @@ export default {
   setup() {
     const nombre = ref(""),
       direccion = ref(""),
-      re1 = ref(false),
-      re2 = ref(false),
+      re11 = ref(false),
+      re22 = ref(false),
       respuesta = ref("El campo esta vacio")
 
 
     const validar = () => {
-      if (nombre.value == "") { re1.value = true }
-      if (nombre.value !== "") { return re1.value = false }
-      if (direccion.value == "") { re2.value = true }
-      if (direccion.value !== "") { return re2.value = false }
+      if (nombre.value === "") { re11.value = true }
+      else { return re11.value = false }
+      if (direccion.value === "") { re22.value = true }
+      else { return re22.value = false }
     }
 
-    return { nombre, direccion, validar, re1, re2, respuesta }
+    return { nombre, direccion, validar, re11, re22, respuesta }
   }
 }
 </script>

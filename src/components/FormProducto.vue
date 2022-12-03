@@ -49,10 +49,15 @@ export default {
 
     const validar = () => {
       if (nombreProducto.value == "") { res1.value = true }
+     else { res1.value = false }
       if (codigo.value == "") { res2.value = true }
+      else { res2.value = false }
       if (precio.value == "") { res3.value = true }
+      else { res3.value = false }
       if (cantidad.value == "") { res4.value = true }
+      else { res4.value = false }
       if (medida.value == "") { res5.value = true }
+      else { res5.value = false }
     }
 
     return { nombreProducto, codigo, cantidad, medida, precio, validar, respuesta, res1, res2, res3, res4, res5 }
