@@ -1,42 +1,31 @@
 <template>
   <div class="container-fluid">
-    <label for="formGroupExampleInput2" class="form-label separar-top separar-bottom">
-      <h3>Nuevo Provedor</h3>
-    </label>
-    <input type="text" class="form-control" v-model="nombre" id="formGroupExampleInput2" placeholder="Nombre" required>
-    <span class="alert" v-if="re11">{{ respuesta }}</span>
-    <label for="formGroupExampleInput2" class="form-label"></label>
-    <textarea class="form-control" v-model="direccion"  placeholder="Direccion" required></textarea>
-    <span class="alert" v-if="re22">{{ respuesta }}</span>
+    <form name="Form" @submit.prevent ="submit()">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label separar-top separar-bottom"><h3>Nuevo Provedor</h3></label>
+        <input type="text"  v-model="form.nombre" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
 
-    <br>
-    <button @click="validar" class="btn btn-primary">Agregar Provedor</button>
+        <label for="exampleFormControlTextarea1" class="form-label"></label>
+        <textarea v-model="form.direccion"  class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Direccion"></textarea>
+
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Agregar Provedor</button>
+    </form>
+
     <br><br><br>
 
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
+import getAll from "../user/provedorApi";
 export default {
   name: 'FormularioProvedor',
 
   setup() {
-    const nombre = ref(""),
-      direccion = ref(""),
-      re11 = ref(false),
-      re22 = ref(false),
-      respuesta = ref("El campo esta vacio")
+    return getAll()
 
-
-    const validar = () => {
-      if (nombre.value === "") { re11.value = true }
-      else { return re11.value = false }
-      if (direccion.value === "") { re22.value = true }
-      else { return re22.value = false }
-    }
-
-    return { nombre, direccion, validar, re11, re22, respuesta }
   }
 }
 </script>
