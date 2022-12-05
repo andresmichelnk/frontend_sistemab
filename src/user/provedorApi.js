@@ -1,7 +1,7 @@
-import {reactive, ref} from "vue"
+import {reactive} from "vue"
 import axios from "axios";
-export default function getAll() {
 
+export default function getAll() {
 
     //GET
  const state = reactive({
