@@ -23,10 +23,6 @@ export default function getAll() {
 
     // POST
     const form = reactive({
-      method: "POST",
-            headers: {
-              "Content-Type": "application/json; charset=utf-8"
-            },
         id: `${Math.floor((Math.random()*100))}`,
         nombre: "",
         direccion:""
@@ -35,6 +31,7 @@ export default function getAll() {
        axios.post('http://localhost:8080/api/proveedor/create',form)
         .then((res)=>{
             console.log(res)
+            res.data
         })
         .catch((error)=>error)
       
