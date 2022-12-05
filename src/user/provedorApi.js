@@ -23,6 +23,10 @@ export default function getAll() {
 
     // POST
     const form = reactive({
+      method: "POST",
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+            },
         id: `${Math.floor((Math.random()*100))}`,
         nombre: "",
         direccion:""
@@ -33,7 +37,7 @@ export default function getAll() {
             console.log(res)
         })
         .catch((error)=>error)
-
+      
     }
 
     return {state,form,submit,getAll}
