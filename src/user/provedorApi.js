@@ -18,23 +18,22 @@ export default function getAll() {
       state.provedores.push(provedor)
     })
   })
-  .catch((err)=>err) 
+  .catch((err)=>err)
 
 
     // POST
     const form = reactive({
+        id: `${Math.floor((Math.random()*100))}`,
         nombre: "",
         direccion:""
     })
-
-    axios.post('http://localhost:8080/api/proveedor/create',form)
+    const submit = () => {
+       axios.post('http://localhost:8080/api/proveedor/create',form)
         .then((res)=>{
             console.log(res)
         })
         .catch((error)=>error)
 
-    const submit = () => {
-        console.log(form)
     }
 
     return {state,form,submit,getAll}
