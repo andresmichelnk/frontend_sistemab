@@ -23,7 +23,7 @@ export default {
         </p>
       </li>
     </ul>
-
+    <div class="alert alert-danger" role="alert" v-if="state.status">{{ state.e }}</div>
   </div>
 </template>
 
