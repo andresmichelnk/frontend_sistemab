@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <form name="Form" @submit.prevent="submit()">
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label separar-top separar-bottom">

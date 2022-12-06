@@ -17,9 +17,11 @@ export default {
       <li class="list-group-item " v-for="item in state.provedores" :key="item.index">
         <p>
         <h4>{{ item.nombre }}</h4>
-        Direccion: {{ item.direccion }}
-        <button class="btn btn-primary float-end button-array">Eliminar</button>
-        <button class="btn btn-primary float-end button-array">Editar</button>
+        <span>Direccion: {{ item.direccion }}</span>
+        <div class="col-ms-12">
+          <button class="btn btn-primary float-end button-array ">Eliminar</button>
+          <button class="btn btn-primary float-end button-array ">Editar</button>
+        </div>
         </p>
       </li>
     </ul>

@@ -15,8 +15,8 @@
 }
 
 .button-array{
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
 }
 
 .alert{

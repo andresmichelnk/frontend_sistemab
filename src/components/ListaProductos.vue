@@ -20,8 +20,10 @@ export default {
         Descripcion : {{ item.descripcion }} <br>
         Precio de Venta: {{ item.precioVenta }} <br>
         Unidad de Medida : {{ item.unidadMedida }}
-        <button class="btn btn-primary float-end button-array">Eliminar</button>
-        <button class="btn btn-primary float-end button-array">Editar</button>
+        <div class="col-ms-12">
+          <button class="btn btn-primary float-end button-array">Eliminar</button>
+          <button class="btn btn-primary float-end button-array">Editar</button>
+        </div>
         </p>
       </li>
     </ul>
