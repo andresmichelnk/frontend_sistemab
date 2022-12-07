@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <ul class="list-group">
-      <li class="list-group-item" v-for="item in productos.value" :key="item.index">
+      <li class="list-group-item" v-for="item in productos" :key="item.index">
         <h4>{{ item.nombre }}</h4>
         <span>Codigo: {{ item.codigo }}</span> <br>
         Descripcion : {{ item.descripcion }} <br>
