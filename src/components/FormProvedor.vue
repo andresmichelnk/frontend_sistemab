@@ -5,12 +5,11 @@
         <label for="exampleFormControlInput1" class="form-label separar-top separar-bottom">
           <h3>Nuevo Provedor</h3>
         </label>
-        <input type="text" v-model="form.nombre" class="form-control" id="exampleFormControlInput1"
-          placeholder="Nombre">
+        <input type="text" v-model="nombre" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
 
         <label for="exampleFormControlTextarea1" class="form-label"></label>
-        <textarea v-model="form.direccion" class="form-control" id="exampleFormControlTextarea1" rows="3"
-          placeholder="Direccion"></textarea>
+        <textarea v-model="direccion" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                  placeholder="Direccion"></textarea>
       </div>
       <br>
       <button type="submit" class="btn btn-primary">Agregar Provedor</button>
@@ -21,14 +20,17 @@
   </div>
 </template>
 
-<script>
-import getAll from "../user/provedorApi";
-export default {
-  name: 'FormularioProvedor',
+<script setup>
+import {createProvedor} from '../user/provedorApi';
 
-  setup() {
-    return getAll()
+const nombre = ref("")
+const direccion = ref("")
 
-  }
+function submit() {
+  createProvedor({
+    nombre,
+    direccion
+  })
 }
+
 </script>

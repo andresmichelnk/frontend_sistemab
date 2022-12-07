@@ -1,27 +1,27 @@
-.separar-top{
-  padding-top: 20px;
- }
-
- .separar-bottom{
-  padding-bottom: 15px;
- }
-
-.centro{
-  padding-top: 3%;
+.separar-top {
+    padding-top: 20px;
 }
 
-.title{
-  text-align: center;
+.separar-bottom {
+    padding-bottom: 15px;
 }
 
-.button-array{
-  margin-left: 5px !important;
-  margin-right: 5px !important;
+.centro {
+    padding-top: 3%;
 }
 
-.alert{
-  color: red;
-  transition: 5ms;
+.title {
+    text-align: center;
+}
+
+.button-array {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+
+.alert {
+    color: red;
+    transition: 5ms;
 }
 
 

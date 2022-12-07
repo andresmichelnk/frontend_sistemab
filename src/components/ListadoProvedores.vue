@@ -1,20 +1,7 @@
-<script>
-import getAll from '../user/provedorApi.js'
-
-
-export default {
-  name: 'ListaTrabajador',
-  setup() {
-    return getAll()
-  }
-}
-</script>
-
-
 <template>
   <div class="container-fluid">
     <ul class="list-group">
-      <li class="list-group-item " v-for="item in state.provedores" :key="item.index">
+      <li class="list-group-item " v-for="item in provedores.values" :key="item.index">
         <p>
         <h4>{{ item.nombre }}</h4>
         <span>Direccion: {{ item.direccion }}</span>
@@ -28,4 +15,19 @@ export default {
     <div class="alert alert-danger" role="alert" v-if="state.status">{{ state.e }}</div>
   </div>
 </template>
+
+<script setup>
+import getAllProvedor from '../user/provedorApi.js'
+import {ref, onBeforeMount} from 'vue'
+
+const provedores = ref([])
+
+function fetchData() {
+  getAllProvedor().then((res) => {
+    provedores.value = data
+  })
+}
+
+onBeforeMount(fetchData)
+</script>
 
