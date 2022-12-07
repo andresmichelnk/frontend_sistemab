@@ -8,7 +8,6 @@
           <button class="btn btn-primary float-end button-array ">Eliminar</button>
           <button class="btn btn-primary float-end button-array ">Editar</button>
         </div>
-        <p></p>
       </li>
     </ul>
     <div class="alert alert-danger" role="alert" v-if="state.status">{{ state.e }}</div>
@@ -28,10 +27,10 @@ const state = reactive({
 function fetchData() {
   getAllProvedor().then((data) => {
     provedores.value = data
-  }).catch((error)=>{
+  }).catch((error) => {
     state.e = "No se Encontro la lista de Provedores"
     state.status = true
-    console.log('No se encuentra la API-REST')
+    console.error('No se encuentra la API-REST')
   })
 }
 

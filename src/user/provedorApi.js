@@ -9,8 +9,7 @@ export function createProvedor(obj) {
     }).then((res) => {
         console.log(res)
         res.data
-    })
-        .catch((error) => console.log('No se encuentra la API-REST'))
+    }).catch((error) => console.log('No se encuentra la API-REST'))
 }
 
 export function getAllProvedor() {
