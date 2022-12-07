@@ -6,11 +6,10 @@ export function createProvedor(obj) {
     return axios.post('http://localhost:8080/api/proveedor/create', {
         id,
         ...obj
+    }).then((res) => {
+        console.log(res)
+        res.data
     })
-        .then((res) => {
-            console.log(res)
-            res.data
-        })
         .catch((error) => console.log('No se encuentra la API-REST'))
 }
 

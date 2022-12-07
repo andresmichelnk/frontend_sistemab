@@ -22,6 +22,7 @@
 
 <script setup>
 import {createProvedor} from '../user/provedorApi';
+import {ref} from "vue"
 
 const nombre = ref("")
 const direccion = ref("")
