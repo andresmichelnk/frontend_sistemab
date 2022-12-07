@@ -17,13 +17,21 @@
 
 <script setup>
 import {getAllProvedor} from '../user/provedorApi.js'
-import {ref, onBeforeMount} from 'vue'
+import {ref, onBeforeMount, reactive} from 'vue'
 
 const provedores = ref([])
+const state = reactive({
+  e: "",
+  status: false
+})
 
 function fetchData() {
   getAllProvedor().then((data) => {
     provedores.value = data
+  }).catch((error)=>{
+    state.e = "No se Encontro la lista de Provedores"
+    state.status = true
+    console.log('No se encuentra la API-REST')
   })
 }
 

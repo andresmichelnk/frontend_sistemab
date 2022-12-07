@@ -16,11 +16,6 @@ export function createProvedor(obj) {
 export function getAllProvedor() {
     return axios.get('http://localhost:8080/api/proveedor/all')
         .then((res) => res.data)
-        .catch((error) => {
-            state.e = "No se Encontro la lista de Provedores"
-            state.status = true
-            console.log('No se encuentra la API-REST')
-        })
 }
 
       
