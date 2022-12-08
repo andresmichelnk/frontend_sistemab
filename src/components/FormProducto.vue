@@ -35,12 +35,20 @@ const codigo = ref("")
 const precioVenta = ref()
 const unidadMedida = ref("")
 
+const emit = defineEmits(['created'])
+
+const created = (event) => {
+  emit('created')
+}
+
 const submit = () => {
   createProducto({
-    descripcion,
-    codigo,
-    precioVenta,
-    unidadMedida
+    descripcion: descripcion.value,
+    codigo: codigo.value,
+    precioVenta: precioVenta.value,
+    unidadMedida: unidadMedida.value
+  }).then(res=>{
+    created()
   })
 }
 </script>

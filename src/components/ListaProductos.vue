@@ -27,7 +27,7 @@ const state = reactive({
   status: false
 })
 
-function fetshData() {
+function fetchData() {
   getAllProducto().then((data) => {
     productos.value = data
   }).catch((error) => {
@@ -37,6 +37,6 @@ function fetshData() {
   })
 }
 
-onBeforeMount(fetshData)
-
+onBeforeMount(fetchData)
+defineExpose({fetchData})
 </script>
