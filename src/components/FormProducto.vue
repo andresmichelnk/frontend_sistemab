@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <form @submit.prevent="submit()">
+    <form name="Form" @submit.prevent="submit()">
       <label for="formGroupExampleInput1" class="form-label separar-top separar-bottom">
         <h3>Nuevo Producto</h3>
       </label>
@@ -27,12 +27,12 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
 import {createProducto} from "../user/productosApi";
+import {ref} from 'vue'
 
 const descripcion = ref("")
-const codigo = ref()
-const precioVenta = ref("")
+const codigo = ref("")
+const precioVenta = ref()
 const unidadMedida = ref("")
 
 const submit = () => {
