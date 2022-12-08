@@ -31,7 +31,7 @@ import {ref} from 'vue'
 import {createProducto} from "../user/productosApi";
 
 const descripcion = ref("")
-const codigo = ref("")
+const codigo = ref()
 const precioVenta = ref("")
 const unidadMedida = ref("")
 
@@ -39,7 +39,7 @@ const submit = () => {
   createProducto({
     descripcion,
     codigo,
-    precio,
+    precioVenta,
     unidadMedida
   })
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <ul class="list-group">
-      <li class="list-group-item " v-for="item in provedores.values" :key="item.index">
+      <li class="list-group-item " v-for="item in provedores" :key="item.index">
         <h4>{{ item.nombre }}</h4>
         <span>Direccion: {{ item.direccion }}</span>
         <div class="col-ms-12">
@@ -35,5 +35,6 @@ function fetchData() {
 }
 
 onBeforeMount(fetchData)
+
 </script>
 
