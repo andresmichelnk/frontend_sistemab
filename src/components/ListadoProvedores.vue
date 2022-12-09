@@ -35,6 +35,6 @@ function fetchData() {
 }
 
 onBeforeMount(fetchData)
-
+defineExpose({fetchData})
 </script>
 

@@ -5,19 +5,19 @@
         <h3>Nuevo Producto</h3>
       </label>
       <input type="text" class="form-control" id="formGroupExampleInput2" v-model="codigo"
-             placeholder="Codigo del producto">
+             placeholder="Codigo del producto" required>
 
       <label for="formGroupExampleInput2" class="form-label"></label>
       <input type="text" class="form-control" id="formGroupExampleInput1" v-model="descripcion"
-             placeholder="Descripcion del producto">
+             placeholder="Descripcion del producto" required>
 
       <label for="formGroupExampleInput3" class="form-label"></label>
-      <input type="text" class="form-control" id="formGroupExampleInput3" v-model="precioVenta"
-             placeholder="Precio de Venta">
+      <input type="number" class="form-control" id="formGroupExampleInput3" v-model="precioVenta"
+             placeholder="Precio de Venta" required>
 
       <label for="formGroupExampleInput5" class="form-label"></label>
       <input type="text" class="form-control" id="formGroupExampleInput5" v-model="unidadMedida"
-             placeholder="Unidad de medida del producto">
+             placeholder="Unidad de medida del producto" required>
 
       <br>
       <button type="submit" class="btn btn-primary">Agregar Producto</button>
@@ -47,7 +47,7 @@ const submit = () => {
     codigo: codigo.value,
     precioVenta: precioVenta.value,
     unidadMedida: unidadMedida.value
-  }).then(res=>{
+  }).then((res)=>{
     created()
   })
 }
