@@ -33,10 +33,6 @@ const created = (event) =>{
   emit('created')
 }
 
-const validation = ()=>{
-  alert('No se puede')
-}
-
 function submit() {
   createProvedor({
     nombre:nombre.value,

@@ -5,7 +5,7 @@
         <h3>Nuevo Producto</h3>
       </label>
       <input type="text" class="form-control" id="formGroupExampleInput2" v-model="codigo"
-             placeholder="Codigo del producto" required>
+             placeholder="Codigo del producto" required alp>
 
       <label for="formGroupExampleInput2" class="form-label"></label>
       <input type="text" class="form-control" id="formGroupExampleInput1" v-model="descripcion"
