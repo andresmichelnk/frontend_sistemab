@@ -6,7 +6,7 @@
         <span>Direccion: {{ item.direccion }}</span>
         <div class="col-ms-12">
           <button class="btn btn-primary float-end button-array ">Eliminar</button>
-          <button class="btn btn-primary float-end button-array ">Editar</button>
+          <button @click="updateData" class="btn btn-primary float-end button-array ">Editar</button>
         </div>
       </li>
     </ul>
@@ -15,8 +15,8 @@
 </template>
 
 <script setup>
-import {getAllProvedor} from '../user/provedorApi.js'
-import {ref, onBeforeMount, reactive} from 'vue'
+import {getAllProvedor,updateProvedor} from '../user/provedorApi.js'
+import {ref, onBeforeMount, reactive, onUnmounted} from 'vue'
 
 const provedores = ref([])
 const state = reactive({
@@ -31,6 +31,14 @@ function fetchData() {
     state.e = "No se Encontro la lista de Provedores"
     state.status = true
     console.error('No se encuentra la API-REST')
+  })
+}
+
+function updateData(){
+  updateProvedor({
+    provedores:provedores.value.id
+  }).then(res=>{
+    console.log(provedores.value)
   })
 }
 

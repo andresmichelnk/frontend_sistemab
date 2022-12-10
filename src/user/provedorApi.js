@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export function createProvedor(obj) {
     const id = `${Math.floor((Math.random() * 100))}`
     return axios.post('http://localhost:8080/api/proveedor/create', {
@@ -17,7 +16,14 @@ export function getAllProvedor() {
         .then((res) => res.data)
 }
 
-
+export function updateProvedor(obj) {
+    return axios.put(`http://localhost:8080/api/proveedor/update/id/${obj.id}`, {
+        ...obj
+    }).then((res) => {
+        console.log(res)
+        res.data
+    }).catch((error) => console.log(`No se encuentra la API-REST :${error}`))
+}
       
     
 
