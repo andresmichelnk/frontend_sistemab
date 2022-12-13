@@ -41,7 +41,7 @@
 
 <script setup>
 import {createProvedor, updateProvedor} from '../user/provedorApi';
-import {defineProps, defineEmits, watch, reactive, onBeforeMount, onMounted} from "vue"
+import {defineProps, defineEmits, watch, reactive,} from "vue"
 
 const props = defineProps(['item'])
 

@@ -7,7 +7,7 @@
           <h3 class="container-fluid separar-top separar-bottom">Listado de Provedores</h3>
           <listado-provedores
               class="separar-bottom"
-              :provedores="provedores" @select="selectItem"/>
+              :provedores="provedores" :state="state" @select="selectItem"/>
         </div>
         <div class="col-ms-12 col-md-6 col-lg-4">
           <formulario-provedor :item="itemSelected" @created="fetchData"/>
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import {onBeforeMount, onMounted, ref} from 'vue';
+import {onBeforeMount, reactive, ref} from 'vue';
 import FormularioProvedor from '../components/FormProvedor.vue'
 import ListadoProvedores from '../components/ListadoProvedores.vue'
 import Menu from '../components/Menu.vue'
@@ -26,6 +26,10 @@ import {getAllProvedor} from "../user/provedorApi";
 
 const itemSelected = ref(null)
 const provedores = ref([])
+const state = reactive({
+  e: "",
+  status: false
+})
 
 
 function fetchData() {

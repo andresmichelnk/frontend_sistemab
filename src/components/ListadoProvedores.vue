@@ -19,12 +19,12 @@ import {getAllProvedor} from '../user/provedorApi.js'
 import { reactive, defineEmits, defineProps} from 'vue'
 const emit = defineEmits(['select'])
 
-const props = defineProps(['provedores'])
+const props = defineProps(['provedores','state'])
 
-const state = reactive({
+/*const state = reactive({
   e: "",
   status: false
-})
+})*/
 
 
 function selectData(item) {
