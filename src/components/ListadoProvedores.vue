@@ -6,7 +6,7 @@
         <span>Direccion: {{ item.direccion }}</span>
         <div class="col-ms-12">
           <button class="btn btn-primary float-end button-array ">Eliminar</button>
-          <button @click="updateData" class="btn btn-primary float-end button-array ">Editar</button>
+          <button @click="selectData(item)" class="btn btn-primary float-end button-array ">Editar</button>
         </div>
       </li>
     </ul>
@@ -15,34 +15,21 @@
 </template>
 
 <script setup>
-import {getAllProvedor,updateProvedor} from '../user/provedorApi.js'
-import {ref, onBeforeMount, reactive, onUnmounted} from 'vue'
+import {getAllProvedor} from '../user/provedorApi.js'
+import { reactive, defineEmits, defineProps} from 'vue'
+const emit = defineEmits(['select'])
 
-const provedores = ref([])
+const props = defineProps(['provedores'])
+
 const state = reactive({
   e: "",
   status: false
 })
 
-function fetchData() {
-  getAllProvedor().then((data) => {
-    provedores.value = data
-  }).catch((error) => {
-    state.e = "No se Encontro la lista de Provedores"
-    state.status = true
-    console.error('No se encuentra la API-REST')
-  })
+
+function selectData(item) {
+  emit('select', item)
 }
 
-function updateData(){
-  updateProvedor({
-    provedores:provedores.value.id
-  }).then(res=>{
-    console.log(provedores.value)
-  })
-}
-
-onBeforeMount(fetchData)
-defineExpose({fetchData})
 </script>
 
