@@ -40,7 +40,7 @@ function fetchData() {
     state.status = true
     console.error('No se encuentra la API-REST')
   })
-  itemSelected.value = null
+
 }
 
 onBeforeMount(fetchData)
