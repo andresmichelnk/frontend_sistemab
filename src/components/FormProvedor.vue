@@ -1,5 +1,6 @@
 <template>
   <div class="container-fluid ">
+
     <form v-if="item" name="Form" @submit.prevent="">
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label separar-top separar-bottom">
@@ -18,6 +19,7 @@
         <button class="btn btn-primary" @click="updateItem">actualizar</button>
       </div>
     </form>
+
     <form v-else name="Form" @submit.prevent="submit()">
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label separar-top separar-bottom">
