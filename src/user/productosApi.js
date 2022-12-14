@@ -1,6 +1,6 @@
 import axios from "axios";
 
-
+// PUT
 export function createProducto(obj) {
     return axios.post('http://localhost:8080/api/producto/create', {
         ...obj
@@ -10,6 +10,7 @@ export function createProducto(obj) {
     }).catch((error) => console.log('No se Guardo los datos, API-REST no encontrada'))
 }
 
+// GET
 export function getAllProducto() {
     return axios.get('http://localhost:8080/api/producto/all')
         .then((res) => res.data)

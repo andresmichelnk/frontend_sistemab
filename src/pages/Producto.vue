@@ -22,7 +22,6 @@ import FormularioProductos from "../components/FormProducto.vue";
 import ListadoProductos from '../components/ListaProductos.vue'
 import {getAllProducto} from "../user/productosApi";
 
-
 const itemSelected = ref(null)
 const productos = ref([])
 const state = reactive({
