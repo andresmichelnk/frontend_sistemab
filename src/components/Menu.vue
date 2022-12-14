@@ -27,11 +27,11 @@ export default {
                 <a class="nav-link" href="#">Gestionar Productos</a>
               </router-link>
             </li>
-            <li class="nav-item">
+<!--            <li class="nav-item">
               <RouterLink to="/targetas">
                 <a class="nav-link" href="#">Gestionar Targetas de Estivas</a>
               </RouterLink>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">
               </a>

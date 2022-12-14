@@ -5,7 +5,7 @@
         <h4>{{ item.nombre }}</h4>
         <span>Direccion: {{ item.direccion }}</span>
         <div class="col-ms-12">
-          <button class="btn btn-primary float-end button-array ">Eliminar</button>
+<!--          <button class="btn btn-primary float-end button-array ">Eliminar</button>-->
           <button @click="selectData(item)" class="btn btn-primary float-end button-array ">Editar</button>
         </div>
       </li>
@@ -15,10 +15,9 @@
 </template>
 
 <script setup>
-import {getAllProvedor} from '../user/provedorApi.js'
 import { defineEmits, defineProps} from 'vue'
-const emit = defineEmits(['select'])
 
+const emit = defineEmits(['select'])
 const props = defineProps(['provedores','state'])
 
 function selectData(item) {

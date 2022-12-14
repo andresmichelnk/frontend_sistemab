@@ -8,8 +8,8 @@
         Precio de Venta: {{ item.precioVenta }} <br>
         Unidad de Medida : {{ item.unidadMedida }}
         <div class="col-ms-12">
-          <button class="btn btn-primary float-end button-array">Eliminar</button>
-          <button class="btn btn-primary float-end button-array">Editar</button>
+<!--          <button class="btn btn-primary float-end button-array">Eliminar</button>-->
+          <button @click="selectData(item)" class="btn btn-primary float-end button-array">Editar</button>
         </div>
       </li>
     </ul>
@@ -18,25 +18,13 @@
 </template>
 
 <script setup>
-import {getAllProducto} from "../user/productosApi";
-import {ref, onBeforeMount, reactive} from "vue";
+import {defineEmits, defineProps} from 'vue'
 
-const productos = ref([])
-const state = reactive({
-  e: "",
-  status: false
-})
+const emit = defineEmits(['select'])
+const props = defineProps(['productos', 'state'])
 
-function fetchData() {
-  getAllProducto().then((data) => {
-    productos.value = data
-  }).catch((error) => {
-    state.e = "No se Encontro la lista de Productos"
-    state.status = true
-    console.error('No se encuentra la API-REST')
-  })
+function selectData(item) {
+  emit('select', item)
 }
 
-onBeforeMount(fetchData)
-defineExpose({fetchData})
 </script>
