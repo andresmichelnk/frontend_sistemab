@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import {onBeforeMount, reactive, ref} from "vue";
+import {onBeforeMount, onUpdated, reactive, ref} from "vue";
 import Menu from '../components/Menu.vue'
 import FormularioProductos from "../components/FormProducto.vue";
 import ListadoProductos from '../components/ListaProductos.vue'

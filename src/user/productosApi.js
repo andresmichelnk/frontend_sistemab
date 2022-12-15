@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// PUT
+// POST
 export function createProducto(obj) {
     return axios.post('http://localhost:8080/api/producto/create', {
         ...obj
@@ -18,7 +18,7 @@ export function getAllProducto() {
 
 // PUT
 export function updateProducto(filter, obj) {
-    return axios.put(`http://localhost:8080/api/producto/update/id/${filter}`, {
+    return axios.put(`http://localhost:8080/api/producto/update/codigo/${filter}`, {
         ...obj
     }).then((res) => {
         console.log(res);

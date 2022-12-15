@@ -27,7 +27,8 @@ export function updateProvedor(filter, obj) {
         return res.data
     }).catch((error) => console.log(`No se encuentra la API-REST :${error}`))
 }
-      
+
+
     
 
   

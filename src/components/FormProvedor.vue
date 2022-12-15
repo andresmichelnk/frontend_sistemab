@@ -1,10 +1,10 @@
 <template>
   <div class="container-fluid ">
 
-    <form v-if="item" name="Form" @submit.prevent="">
+    <form v-if="item" name="Form" @submit.prevent>
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label separar-top separar-bottom">
-          <h3>Actualizar Provedor</h3>
+          <h3>Actualizar  Provedor</h3>
         </label>
         <input type="text" v-model="innerValue.nombre" class="form-control" placeholder="Nombre"
                required>
@@ -70,7 +70,7 @@ function submit() {
 }
 
 function deleteItem() {
-  alert(Eliminar)
+  alert('Eliminado ;)')
   created()
 }
 

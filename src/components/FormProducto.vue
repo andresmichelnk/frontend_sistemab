@@ -31,7 +31,7 @@
         <h3>Nuevo Producto</h3>
       </label>
       <input type="text" class="form-control" id="formGroupExampleInput2" v-model="innerValue.codigo"
-             placeholder="Codigo del producto" required alp>
+             placeholder="Codigo del producto" required>
 
       <label for="formGroupExampleInput2" class="form-label"></label>
       <input type="text" class="form-control" id="formGroupExampleInput1" v-model="innerValue.descripcion"
@@ -74,7 +74,6 @@ watch(() => props.item, ({descripcion, codigo, precioVenta, unidadMedida}, _old_
 })
 
 const emit = defineEmits(['created'])
-
 const created = (event) => {
   emit('created')
 }
@@ -85,9 +84,14 @@ function submit() {
   })
 }
 
+function deleteItem(){
+  alert("Eliminado ;)")
+  created()
+}
+
 function updateItem() {
-  let {id} = props.item;
-  updateProducto(id, innerValue).then(
+  let {codigo} = props.item;
+  updateProducto(codigo, innerValue).then(
       () => created()
   )
 }

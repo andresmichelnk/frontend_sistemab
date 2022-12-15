@@ -8,7 +8,6 @@
         Precio de Venta: {{ item.precioVenta }} <br>
         Unidad de Medida : {{ item.unidadMedida }}
         <div class="col-ms-12">
-<!--          <button class="btn btn-primary float-end button-array">Eliminar</button>-->
           <button @click="selectData(item)" class="btn btn-primary float-end button-array">Editar</button>
         </div>
       </li>
