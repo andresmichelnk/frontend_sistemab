@@ -4,7 +4,7 @@
     <form v-if="item" name="Form" @submit.prevent>
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label separar-top separar-bottom">
-          <h3>Actualizar  Provedor</h3>
+          <h3>Actualizar Provedor</h3>
         </label>
         <input type="text" v-model="innerValue.nombre" class="form-control" placeholder="Nombre"
                required>
@@ -42,7 +42,7 @@
 </template>
 
 <script setup>
-import {createProvedor, updateProvedor} from '../user/provedorApi';
+import {createProvedor, deleteProvedor, updateProvedor} from '../user/provedorApi';
 import {defineProps, defineEmits, watch, reactive,} from "vue"
 
 const props = defineProps(['item'])
@@ -64,21 +64,22 @@ const created = (event) => {
 }
 
 function submit() {
-  createProvedor(innerValue).then((res) => {
-    created()
-  })
+  createProvedor(innerValue)
+      .then((res) => {
+        created()
+      })
 }
 
 function deleteItem() {
-  alert('Eliminado ;)')
-  created()
+  let {id} = props.item
+  deleteProvedor(id, innerValue)
+      .then(() => created())
 }
 
 function updateItem() {
   let {id} = props.item;
-  updateProvedor(id, innerValue).then(
-      () => created()
-  )
+  updateProvedor(id, innerValue)
+      .then(() => created())
 }
 
 </script>

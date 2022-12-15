@@ -5,7 +5,7 @@
         <h3>Actualizar Producto</h3>
       </label>
       <input type="text" class="form-control" v-model="innerValue.codigo"
-             placeholder="Codigo del producto" required alp>
+             placeholder="Codigo del producto" required>
 
       <label for="formGroupExampleInput2" class="form-label"></label>
       <input type="text" class="form-control" v-model="innerValue.descripcion"
@@ -53,7 +53,7 @@
 </template>
 
 <script setup>
-import {createProducto, updateProducto} from "../user/productosApi";
+import {createProducto, deleteProducto, updateProducto} from "../user/productosApi";
 import {defineProps, defineEmits, watch, reactive,} from "vue"
 
 
@@ -84,15 +84,15 @@ function submit() {
   })
 }
 
-function deleteItem(){
-  alert("Eliminado ;)")
-  created()
+function deleteItem() {
+  let {codigo} = props.item
+  deleteProducto(codigo, innerValue)
+      .then(() => created())
 }
 
 function updateItem() {
   let {codigo} = props.item;
-  updateProducto(codigo, innerValue).then(
-      () => created()
-  )
+  updateProducto(codigo, innerValue)
+      .then(() => created())
 }
 </script>
