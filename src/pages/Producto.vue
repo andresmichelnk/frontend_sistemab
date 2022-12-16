@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import {onBeforeMount, onUpdated, reactive, ref} from "vue";
+import {onBeforeMount, reactive, ref} from "vue";
 import Menu from '../components/Menu.vue'
 import FormularioProductos from "../components/FormProducto.vue";
 import ListadoProductos from '../components/ListaProductos.vue'
@@ -44,5 +44,4 @@ onBeforeMount(fetchData)
 function selectItem(item) {
   itemSelected.value = item;
 }
-
 </script>

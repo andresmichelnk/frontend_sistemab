@@ -1,4 +1,4 @@
-import {_axios } from "@/plugins/axios";
+import {_axios} from "@/plugins/axios";
 
 // POST
 export function createProducto(obj) {

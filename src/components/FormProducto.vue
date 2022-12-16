@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid">
-    <form v-if="item" name="Form" @submit.prevent="">
+    <form v-if="item" name="Form" @submit.prevent>
       <label for="formGroupExampleInput1" class="form-label separar-top separar-bottom">
         <h3>Actualizar Producto</h3>
       </label>
