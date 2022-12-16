@@ -21,10 +21,10 @@ function _login() {
     </p>
     <form class="separar-bottom">
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Dirección de correo electrónico</label>
-        <input v-model="username" type="email" class="form-control" id="exampleInputEmail1"
+        <label for="exampleInputEmail1" class="form-label">Usuario</label>
+        <input v-model="username" type="text" class="form-control" id="exampleInputEmail1"
                aria-describedby="emailHelp">
-        <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
+        <div id="emailHelp" class="form-text">Usted esta seguro con nosotros</div>
       </div>
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Clave</label>
