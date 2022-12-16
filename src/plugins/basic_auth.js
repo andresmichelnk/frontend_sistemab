@@ -7,7 +7,6 @@ import {
 import {reactive} from "vue";
 
 export const session = new reactive({
-    me: null,
     username: null,
     password: null,
     roles: [],
@@ -46,7 +45,10 @@ async function try_login() {
 
 async function logout() {
     clean_auth_headers()
-    session.me = null;
+    session.username = null;
+    session.password = null;
+    session.roles = [];
+    session.enable = null;
 }
 
 export {

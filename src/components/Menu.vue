@@ -1,6 +1,12 @@
-<script>
-export default {
-  name: 'Menu'
+<script setup>
+import {logout} from "@/plugins/basic_auth"
+import {useRouter} from "vue-router";
+
+const router = useRouter()
+
+function _logout(){
+  logout();
+  router.push("/login");
 }
 </script>
 
@@ -15,8 +21,8 @@ export default {
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse float-end" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="d-flex flex-row collapse navbar-collapse float-end" id="navbarNav">
+          <ul class="navbar-nav flex-grow-1">
             <li class="nav-item">
               <router-link to="/provedor">
                 <a class="nav-link decoracion">Gestionar Provedor</a>
@@ -41,6 +47,9 @@ export default {
               </a>
             </li>
           </ul>
+          <button class="btn btn-info mx-3 text-white" @click="_logout">
+            logout
+          </button>
         </div>
       </div>
     </nav>
