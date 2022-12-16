@@ -8,7 +8,7 @@ let password = new ref("");
 const router = useRouter()
 
 function _login() {
-  login(username, password).then(() =>
+  login(username.value, password.value).then(() =>
       router.push('/home')
   ).catch(console.log)
 }
