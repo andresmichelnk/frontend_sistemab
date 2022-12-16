@@ -19,22 +19,21 @@ async function login(username, password) {
         '/auth/login', {
             username,
             password
+        },{
+            withCredentials: false
         }).then(res => res.data)
 
     session.username = username;
     session.password = password;
     session.roles = roles;
     session.enable = enable;
-    set_auth_headers(username, password)
+    // set_auth_headers(username, password)
 }
 
 async function try_login() {
     let access = load_auth_headers()
     if (access) {
-        let {
-            username,
-            password
-        } = access
+        let {username, password} = access;
         session.username = username;
         session.password = password;
         return login(

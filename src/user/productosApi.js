@@ -2,7 +2,7 @@ import {_axios } from "@/plugins/axios";
 
 // POST
 export function createProducto(obj) {
-    return _axios.post('http://localhost:8080/api/producto/create', {...obj})
+    return _axios.post('/producto/create', {...obj})
         .then((res) => {
             console.log(res)
             res.data
@@ -11,13 +11,13 @@ export function createProducto(obj) {
 
 // GET
 export function getAllProducto() {
-    return _axios.get('http://localhost:8080/api/producto/all')
+    return _axios.get('/producto/all')
         .then((res) => res.data)
 }
 
 // PUT
 export function updateProducto(filter, obj) {
-    return _axios.put(`http://localhost:8080/api/producto/update/codigo/${filter}`, {...obj})
+    return _axios.put(`/producto/update/codigo/${filter}`, {...obj})
         .then((res) => {
             console.log(res);
             return res.data
@@ -26,7 +26,7 @@ export function updateProducto(filter, obj) {
 
 // DELETE
 export function deleteProducto(filter, obj) {
-    return _axios.delete(`http://localhost:8080/api/producto/delete/codigo/${filter}`, {...obj})
+    return _axios.delete(`/producto/delete/codigo/${filter}`, {...obj})
         .then((res) => {
             console.log(res)
             return res.data

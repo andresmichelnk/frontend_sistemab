@@ -12,10 +12,7 @@ export function load_auth_headers() {
         clean_auth_headers()
         return null;
     }
-    _axios.defaults.auth = {
-        username,
-        password
-    };
+    // set_auth_headers(username,password)
     return {
         username,
         password
